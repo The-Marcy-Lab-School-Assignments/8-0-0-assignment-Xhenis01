@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 
 
-// controllers
 const serveIndex = (req, res, next) => {
     res.sendFile(__dirname + '/index.html');
 }
@@ -21,13 +20,10 @@ const serveHello = (req, res, next) => {
     res.send(`Hello, ${name}!`);
 }
 
-
-// endpoints
 app.get('/', serveIndex);
 app.get('/about', serveAbout);
 app.get('/api/hello', serveHello);
 app.get('/api/data', serveData);
 
-// listen
-const port = 8080;
+const port = 1234;
 app.listen(port, () => console.log(`listening at http://localhost:${port}`)); 
